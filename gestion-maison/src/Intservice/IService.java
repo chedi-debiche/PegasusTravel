@@ -10,15 +10,13 @@ import java.util.List;
 
 /**
  *
- * @author JAIDI
+ * @author ASUS
  */
-public interface IService <T> {
-    
-    public abstract void add (T t) throws SQLException;
-    List<T> read() throws SQLException;
-    void update(T t) throws SQLException;
-    void delete(T t) throws SQLException;
-
-    
-    
+public interface IService <T>{
+    public void ajouter(T t);
+    public T getById(int id);
+    public List<T> getAll();
+    public boolean modifier(T t);
+    public boolean supprimer(int id );
 }
+

@@ -16,9 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 import utils.Database;
 
+
+
 /**
  *
- * @author chedi
+ * @author Fayechi
  */
 public class ServiceReservation implements IService<ReservationM>{
  Connection cnx ;
@@ -27,67 +29,95 @@ public class ServiceReservation implements IService<ReservationM>{
         
     }
 
+
+
+
+
+
+    public void ajouter(ReservationM m) {
+        try {
+            String req = "INSERT INTO `ReservationM` (`nb_chambre`, `nb_personne`,`date`,`id_maison` ) VALUES ( ? , ? ,str_to_date(?,'%d/%m/%y'), ?)";
+            PreparedStatement ps = cnx.prepareStatement(req);
+            ps.setInt(1, m.getNb_chambre());
+            ps.setInt(2, m.getNb_personne());
+            ps.setString(3, m.getDate());
+            ps.setInt(4, m.getId_maison());
+
+               
+               
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
+
+    @Override
+    public ReservationM getById(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<ReservationM> getAll() {
+        List<ReservationM> list = new ArrayList<>();
+        try {
+            String req = "Select * from ReservationM";
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while(rs.next()){
+                ReservationM r = new ReservationM(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getString(4),rs.getInt(5));
+                list.add(r);
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return list;
+    }
+
+    @Override
+    public boolean modifier(ReservationM r) {
+        try {
+            String req = "UPDATE  `ReservationM` SET nb_chambre= ? , nb_personne= ? , date =str_to_date(?,'%d/%m/%y'), id_maison = ? WHERE id_res= ? ";
+            PreparedStatement ps = cnx.prepareStatement(req);
+            ps.setInt(1, r.getNb_chambre());
+            ps.setInt(2, r.getNb_personne());
+            ps.setString(3, r.getDate());
+            ps.setInt(4, r.getId_maison());
+
+             ps.setInt(5, r.getId_res());
+               
+            ps.executeUpdate();
+            
+            
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
     
+                    
+
+        }
+        return true ; 
+    }
     
-    
- @Override
-     public void add(ReservationM r) throws SQLException{
+
+    @Override
+    public boolean supprimer(int id ) {
         
-        Statement st = cnx.createStatement();
-    //    String req = "insert into personne values ("+p.getId()+" , " +p.getNom()+ ", " +p.getPrenom() +")";
-          String req =" insert into ReservationM (id_res, nb_chambre , nb_personne, date) values (" +r.getId_res()+ ",'"+r.getNb_chambre()+" ' ,'"+r.getNb_personne()+" ' , '"+r.getDate() +"' )"; 
-    st.executeUpdate(req);
+        
+        
+            try {
+            String req = "DELETE FROM ReservationM  WHERE id_res= ?" ;
+            PreparedStatement ps = cnx.prepareStatement(req);
+            ps.setInt(1,id);
+          
 
-
-
+               
+               
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+    
+        }
+        return true ; 
+        
     }
 
-    @Override
-    public List<ReservationM> read() throws SQLException{
-    List<ReservationM> ls = new ArrayList<ReservationM>();
-    Statement st = cnx.createStatement();
-    String req = "select * from ReservationM";
-    ResultSet rs = st.executeQuery(req);
-     
-    while(rs.next()){
-        int id_res = rs.getInt("id_res");
-        int nb_chambre = rs.getInt(2);
-        int nb_personne = rs.getInt(3);
-        String date = rs.getString(4);
-
-        ReservationM r = new ReservationM(id_res, nb_chambre, nb_personne, date);
-        ls.add(r);
-
-    }
-    
-    return ls;
-
-    }
-
-   @Override
-    public void update(ReservationM r) throws SQLException {
-        PreparedStatement pt = cnx.prepareStatement("update ReservationM set nb_personne = ? where id_res = ? ");
-        pt.setInt(1, 69);
-        pt.setInt(2, r.getId_res());
-        pt.executeUpdate(); 
-
-
-    }
-
-    @Override
-    public void delete(ReservationM r) throws SQLException {
-        PreparedStatement pt = cnx.prepareStatement("delete from ReservationM where id_res = ?");
-        pt.setInt(1, r.getId_res());
-        pt.executeUpdate();    }
-
-    
-    
-    
-    
-    
-    
-    
-   
- 
-    
 }

@@ -16,80 +16,118 @@ import java.util.ArrayList;
 import java.util.List;
 import utils.Database;
 
+
+
+
 /**
  *
- * @author chedi
+ * @author Fayechi
  */
-public class ServiceMaison implements IService<maisonH>{
+
+ public class ServiceMaison implements IService<maisonH>{
  Connection cnx ;
     public ServiceMaison() {
          cnx = Database.getInstance().getConn();
         
     }
-
-    
-    
-    
- @Override
-     public void add(maisonH M) throws SQLException{
-        
-        Statement st = cnx.createStatement();
-    //    String req = "insert into personne values ("+p.getId()+" , " +p.getNom()+ ", " +p.getPrenom() +")";
-          String req =" insert into maisonH (id, nom , image, localisation , description ,prix) values (" +M.getId()+ ",'"+M.getNom()+" ' ,'"+M.getImage()+" ' , '"+M.getLocalisation() +"' , '"+M.getDescription() +"','"+M.getPrix() +"')"; 
-    st.executeUpdate(req);
-
-
-
-    }
-
-    @Override
-    public List<maisonH> read() throws SQLException{
-    List<maisonH> ls = new ArrayList<maisonH>();
-    Statement st = cnx.createStatement();
-    String req = "select * from maisonH";
-    ResultSet rs = st.executeQuery(req);
-     
-    while(rs.next()){
-        int id = rs.getInt("id");
-        String nom = rs.getString(2);
-        String image = rs.getString(3);
-        String localisation = rs.getString(4);
-        String description = rs.getString(5);
-        int prix = rs.getInt(6);
-
-        maisonH M = new maisonH(id,nom, image, localisation, description , prix);
-        ls.add(M);
-      //  System.out.println( id + ", " + nom + ", " + prenom);
-    }
-    
-    return ls;
-
-    }
-
-   @Override
-    public void update(maisonH M) throws SQLException {
-        PreparedStatement pt = cnx.prepareStatement("update maisonH set nom = ? where id = ? ");
-        pt.setString(1, "maisooooon");
-        pt.setInt(2, M.getId());
-        pt.executeUpdate(); 
-
-
-    }
-
-    @Override
-    public void delete(maisonH M) throws SQLException {
-        PreparedStatement pt = cnx.prepareStatement("delete from maisonH where id = ?");
-        pt.setInt(1, M.getId());
-        pt.executeUpdate();    }
-
     
     
     
     
-    
-    
-    
+
    
- 
+@Override
+    public void ajouter(maisonH m) {
+        try {
+            String req = "INSERT INTO `maisonH` (`nom`, `image`,`localisation`,`description`,`prix`) VALUES (?, ? , ? , ? , ?  )";
+            PreparedStatement ps = cnx.prepareStatement(req);
+            ps.setString(1, m.getNom());
+            ps.setString(2, m.getImage());
+            ps.setString(3, m.getLocalisation());
+            ps.setString(4, m.getDescription());
+            ps.setFloat(5, m.getPrix());
+
+
+               
+               
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
+
+    @Override
+    public maisonH getById(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<maisonH> getAll() {
+        List<maisonH> list = new ArrayList<>();
+        try {
+            String req = "Select * from maisonH";
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while(rs.next()){
+                maisonH m = new maisonH(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getFloat(6) );
+                list.add(m);
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return list;
+    }
+
+    @Override
+    public boolean modifier(maisonH m) {
+        try {
+            String req = "UPDATE  `maisonH` SET nom= ? ,image= ? ,localisation= ? ,description= ? ,prix=?  WHERE id_maison= ? ";
+            PreparedStatement ps = cnx.prepareStatement(req);
+            ps.setString(1, m.getNom());
+            ps.setString(2, m.getImage());
+            ps.setString(3, m.getLocalisation());
+            ps.setString(4, m.getDescription());
+            ps.setFloat(5,  m.getPrix());
+            
+             ps.setInt(6, m.getId_maison());
+
+               
+               
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
     
+            
+                    
+
+        }
+        return true ; 
+    }
+    
+
+    @Override
+    public boolean supprimer(int id ) {
+        
+        
+        
+            try {
+            String req = "DELETE FROM maisonH  WHERE id_maison= ?" ;
+            PreparedStatement ps = cnx.prepareStatement(req);
+            ps.setInt(1,id);
+          
+
+               
+               
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+    
+        }
+        return true ; 
+        
+    }
+
 }
+
+
+ //str_to_date(?,'%d/%m/%y')

@@ -13,11 +13,11 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author JAIDI
+ * @author ASUS
  */
 public class Database {
     
-    private static String url ="jdbc:mysql://localhost:3306/pegasustravel";
+    private static String url ="jdbc:mysql://localhost:3306/test44";
     private static String user ="root";
     private static String pwd ="";
     

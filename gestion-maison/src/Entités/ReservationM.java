@@ -5,22 +5,27 @@
  */
 package Entités;
 
-import java.util.List;
-
 /**
  *
- * @author CC
+ * @author CHEDI
  */
 public class ReservationM {
-    private int id_res,nb_chambre,nb_personne;
+    private int id_res,nb_chambre,nb_personne,id_maison;
     private String date;
     
+      public ReservationM(int nb_chambre, int nb_personne , String date,int id_maison) {
+        this.nb_chambre = nb_chambre;
+        this.nb_personne = nb_personne;
+        this.date = date;
+        this.id_maison=id_maison;
+    }
 
-    public ReservationM(int id_res, int nb_chambre, int nb_personne , String date) {
+    public ReservationM(int id_res, int nb_chambre, int nb_personne , String date,int id_maison) {
         this.id_res = id_res;
         this.nb_chambre = nb_chambre;
         this.nb_personne = nb_personne;
         this.date = date;
+        this.id_maison=id_maison;
     }
 
     public int getId_res() {
@@ -37,6 +42,10 @@ public class ReservationM {
 
     public String getDate() {
         return date;
+    }
+    
+    public int getId_maison(){
+        return id_maison;
     }
 
     public void setId_res(int id_res) {
@@ -55,16 +64,24 @@ public class ReservationM {
         this.date = date;
     }
 
+    public void setId(int id_maison){
+        this.id_maison=id_maison;
+    }
+
+    public void setId_maison(int id_maison) {
+        this.id_maison = id_maison;
+    }
+
+    @Override
+    public String toString() {
+        return "ReservationM{" + "id_res=" + id_res + ", nb_chambre=" + nb_chambre + ", nb_personne=" + nb_personne + ", date=" + date + ", id_maison=" + id_maison + '}';
+    }
+    
+
     
 
    
 
-    @Override
-    public String toString() {
-      
-        return "ReservationM{" + "id_res=" + id_res + ", nb_chambre=" + nb_chambre + ", nb_personne=" + nb_personne + "date=" + date + '}';
-    }
-
- 
+  
     
 }

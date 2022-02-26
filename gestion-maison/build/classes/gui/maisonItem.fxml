@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="256.0" prefWidth="349.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gui.MaisonItemController">
+   <children>
+      <VBox layoutY="1.0" prefHeight="256.0" prefWidth="349.0">
+         <children>
+            <Label fx:id="labelNomMaiosn" prefHeight="79.0" prefWidth="564.0" text="  Nom maison : " />
+            <Label fx:id="labelLocalisationM" prefHeight="89.0" prefWidth="558.0" text="  Localisation : " />
+            <Label fx:id="labelDescriptionM" prefHeight="100.0" prefWidth="560.0" text="  Description :" />
+            <Label fx:id="labelPrixM" prefHeight="87.0" prefWidth="540.0" text="  Prix :" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
