@@ -10,7 +10,7 @@ package Entités;
  * @author ASUS
  */
 public class ReservationV {
-    private int idr,nb_personnes;
+    private int idr,nb_personnes,id;
     private String date;
     
 
@@ -21,7 +21,13 @@ public class ReservationV {
     public void setIdr(int idr) {
         this.idr = idr;
     }
+   public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
     public int getNb_personnes() {
         return nb_personnes;
     }
@@ -41,15 +47,22 @@ public class ReservationV {
     public ReservationV() {
     }
 
-    public ReservationV(int idr, int nb_personnes, String date) {
+    public ReservationV(int idr, int nb_personnes, String date, int id) {
         this.idr = idr;
         this.nb_personnes = nb_personnes;
         this.date = date;
+        this.id=id;
+    }
+  public ReservationV(int nb_personnes, String date, int id) {
+       
+        this.nb_personnes = nb_personnes;
+        this.date = date;
+        this.id=id;
     }
 
     @Override
     public String toString() {
-        return "ReservationV{" + "idr=" + idr + ", nb_personnes=" + nb_personnes + ", date=" + date +'}';
+        return "ReservationV{" + "idr=" + idr + ", nb_personnes=" + nb_personnes + ", date=" + date +", id=" + id +'}';
     }
     
     

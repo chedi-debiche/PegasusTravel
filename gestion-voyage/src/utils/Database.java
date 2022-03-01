@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class Database {
     
-    private static String url ="jdbc:mysql://localhost:3306/pegasustravel";
+    private static String url ="jdbc:mysql://localhost:3306/exx";
     private static String user ="root";
     private static String pwd ="";
     

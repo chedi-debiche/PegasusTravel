@@ -60,6 +60,13 @@ public class Voyage {
         this.description = description;
         this.prix = prix;
     }
+        public Voyage(String nom, String destination, String description, int prix) {
+       
+        this.nom = nom;
+        this.destination = destination;
+        this.description = description;
+        this.prix = prix;
+    }
 
     @Override
     public String toString() {

@@ -3,12 +3,29 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/JDBC-JAVAFX/src/services/ServiceVoyage.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/JDBC-JAVAFX/src/Intservice/IService.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/JDBC-JAVAFX/src/Entités/Voyage.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/JDBC-JAVAFX/src/jdbc/javafx/JDBCJAVAFX.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/JDBC-JAVAFX/src/utils/Database.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/JDBC-JAVAFX/src/services/ServiceReservationV.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/VoyaggeController.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/VoyageBack.fxml</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/ReservationV.fxml</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/VoyageFront.fxml</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/Voyage.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/Mainvr.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/Entités/ReservationV.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/VoyageBackController.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/services/ServiceVoyage.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/ReservationFrontController.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/file_path.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/VoyageFrontController.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/Entités/Voyage.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/services/ServiceReservationV.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/VoyaggeFrontController.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/VoyaggeFront.fxml</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/ReservationVEnregistre.fxml</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/Voyagge.fxml</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/ReservationVController.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/ReservationVEnregistreController.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/utils/Database.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/ReservationV.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/PIJVX/src/gui/ReservationFront.fxml</file>
         </group>
     </open-files>
 </project-private>

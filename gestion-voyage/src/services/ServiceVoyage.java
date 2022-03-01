@@ -63,16 +63,53 @@ public class ServiceVoyage implements IService<Voyage>{
 
     }
 
-    @Override
+   @Override
     public void update(Voyage v) throws SQLException {
-        PreparedStatement pt = cnx.prepareStatement("update voyage set destination = ? where id = ? ");
-        pt.setString(1, "Monaco");
-        pt.setInt(2, v.getId());
+        PreparedStatement pt = cnx.prepareStatement("update voyage set nom = ? , destination = ? , description = ? , prix = ? where id = ? ");
+        pt.setString(1, v.getNom());
+        pt.setString(2, v.getDestination());
+        pt.setString(3, v.getDescription());
+        pt.setInt(4, v.getPrix());
+        pt.setInt(5, v.getId());
         pt.executeUpdate(); 
 
 
     }
+      /*         @Override
+    public void update(Voyage  v) {
+        try {
+            String req = "UPDATE voyage SET nom='" + v.getNom() + "'destination'" + v.getDestination() +  "'description'" + v.getDescription() +  "'prix'" + v.getPrix() +"' WHERE id=" + v.getId();
+            Statement st = cnx.createStatement();
+            st.executeUpdate(req);
+            //System.out.println("Personne modifée !");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    */
+    
+    /*@Override
+    public void delete(Voyage v) {
+        try {
+            String req2 = "DELETE FROM voyage where nom=" + v.getNom();
+            Statement st = cnx.createStatement();
+            st.executeUpdate(req2);
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+*/
 
+  /*     @Override
+    public void update(Voyage v) throws SQLException {
+        
+        Statement st = cnx.createStatement();
+          String req =" update voyage set (id, nom , destination, description, prix) (" +v.getId()+ ", '"+v.getNom()+" ' , '"+v.getDestination() +" ' , '"+v.getDescription() + " ' , '"+v.getPrix()+ "')"; 
+    st.executeUpdate(req);
+
+
+
+    }*/
    @Override
     public void delete(Voyage v) throws SQLException {
         PreparedStatement pt = cnx.prepareStatement("delete from voyage where id = ?");
