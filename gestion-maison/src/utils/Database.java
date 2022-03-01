@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class Database {
     
-    private static String url ="jdbc:mysql://localhost:3306/test44";
+    private static String url ="jdbc:mysql://localhost:3306/javafx";
     private static String user ="root";
     private static String pwd ="";
     

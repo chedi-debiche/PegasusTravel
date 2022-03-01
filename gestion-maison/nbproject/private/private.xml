@@ -3,17 +3,32 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/utils/Database.java</file>
-            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/jdbcjavafx/JDBCJAVAFX.java</file>
-            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/maisonH.java</file>
-            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/Services/ServiceMaison.java</file>
-            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/Services/ServiceReservation.java</file>
-            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/Entités/maisonH.java</file>
-            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/Mainmr.java</file>
             <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/Intservice/IService.java</file>
             <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/Entités/ReservationM.java</file>
-            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/MaisonH_BackController.java</file>
-            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/maisonH_Back.fxml</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/MaisonController.java</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/maisonH.java</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/Services/ServiceReservation.java</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/ConsulterReservationsController.java</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/FrontMaison1.fxml</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/ReservationmController.java</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/maison.fxml</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/reserverFront.fxml</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/DashboardM.fxml</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/frontmaison.fxml</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/pidev/frontProdController.java</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/ReserverFrontController.java</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/Entités/maisonH.java</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/FrontMaison1Controller.java</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/ConsulterReservations.fxml</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/ReservationM.java</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/utils/Database.java</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/logopegasus.png</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/Services/ServiceMaison.java</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/Mainmr.java</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/reservationm.fxml</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/FrontmaisonController.java</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/jdbcjavafx/JDBCJAVAFX.java</file>
+            <file>file:/C:/Users/CC/3D%20Objects/JDBCJAVAFX/src/gui/DashboardMController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -39,14 +39,14 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="descriptionlabel" layoutX="290.0" layoutY="124.0" prefHeight="131.0" prefWidth="615.0" text="Description">
+            <Label fx:id="descriptionlabel" layoutX="259.0" layoutY="68.0" prefHeight="215.0" prefWidth="594.0" text="Description">
                <font>
                   <Font size="21.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <TableView fx:id="tvMaison" layoutX="451.0" layoutY="335.0" prefHeight="345.0" prefWidth="785.0">
+      <TableView fx:id="tvMaison" layoutX="392.0" layoutY="427.0" prefHeight="201.0" prefWidth="782.0">
          <columns>
             <TableColumn fx:id="colId_maison" prefWidth="48.0" text="ID" />
             <TableColumn fx:id="colNom_maison" prefWidth="189.0" text="Nom maison hote" />

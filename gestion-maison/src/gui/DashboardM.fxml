@@ -8,10 +8,14 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="662.0" prefWidth="1107.0" style="-fx-background-color: #424242;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gui.DashboardMController">
+<AnchorPane id="AnchorPane" prefHeight="662.0" prefWidth="1107.0" style="-fx-background-color: #424242;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DashboardMController">
    <children>
-      <Button fx:id="maisonBtn" layoutX="298.0" layoutY="210.0" mnemonicParsing="false" onAction="#MaisonBtn" prefHeight="69.0" prefWidth="528.0" style="-fx-background-color: #2121; -fx-border-color: #FFD700;" text="Gestion Des Maisons D'hotes">
+      <ImageView fitHeight="752.0" fitWidth="1170.0" layoutX="-57.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/triangle-solid-black-gold-4k-wk.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="maisonBtn" layoutX="304.0" layoutY="234.0" mnemonicParsing="false" onAction="#MaisonBtn" prefHeight="69.0" prefWidth="528.0" style="-fx-background-color: #424242; -fx-background-radius: 30;" text="Gestion Des Maisons D'hotes">
          <font>
             <Font size="28.0" />
          </font>
@@ -24,7 +28,7 @@
             </LinearGradient>
          </textFill>
       </Button>
-      <Button fx:id="ResBtn" layoutX="298.0" layoutY="308.0" mnemonicParsing="false" onAction="#ResBtn" prefHeight="76.0" prefWidth="528.0" style="-fx-background-color: #2121; -fx-border-color: #FFD700;" text="Gestion Reservation Des Maisons D'hotes">
+      <Button fx:id="ResBtn" layoutX="304.0" layoutY="313.0" mnemonicParsing="false" onAction="#ResBtn" prefHeight="76.0" prefWidth="528.0" style="-fx-background-color: #424242; -fx-background-radius: 30;" text="Gestion Reservation Des Maisons D'hotes">
          <font>
             <Font size="26.0" />
          </font>
@@ -37,11 +41,12 @@
             </LinearGradient>
          </textFill>
       </Button>
-      <Button fx:id="closeBtn" layoutX="36.0" layoutY="598.0" mnemonicParsing="false" onAction="#view_close_fn" prefHeight="39.0" prefWidth="160.0" text="Fermer " />
+      <Button fx:id="closeBtn" layoutX="37.0" layoutY="590.0" mnemonicParsing="false" onAction="#view_close_fn" prefHeight="39.0" prefWidth="160.0" style="-fx-background-color: #424242; -fx-background-radius: 30;" text="Fermer " textFill="#dd1010" />
       <ImageView fitHeight="258.0" fitWidth="438.0" layoutX="-41.0" layoutY="-79.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Image/lojjjgo-removebg-preview.png" />
          </image>
       </ImageView>
+      <Button fx:id="FrontBtn" layoutX="60.0" layoutY="124.0" mnemonicParsing="false" onAction="#Front" prefHeight="31.0" prefWidth="83.0" text="Front" />
    </children>
 </AnchorPane>

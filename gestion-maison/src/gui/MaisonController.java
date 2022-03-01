@@ -5,6 +5,12 @@
  */
 package gui;
 
+//import com.gembox.spreadsheet.CellValueType;
+//import com.gembox.spreadsheet.ExcelCell;
+//import com.gembox.spreadsheet.ExcelColumnCollection;
+//import com.gembox.spreadsheet.ExcelFile;
+//import com.gembox.spreadsheet.ExcelWorksheet;
+//import com.qoppa.pdfViewerFX.PDFViewer;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,7 +21,6 @@ import java.sql.Statement;
 import javafx.event.ActionEvent;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
@@ -31,6 +36,26 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.stage.FileChooser;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URLEncoder;
+import javafx.application.Application;
+import javafx.print.PageLayout;
+import javafx.print.PageOrientation;
+import javafx.print.Paper;
+import javafx.print.Printer;
+import javafx.print.PrinterJob;
+import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.stage.Stage;
+import utils.Database;
+
 
 
 /**
@@ -80,20 +105,26 @@ public class MaisonController implements Initializable {
     private Label file_path;
     @FXML
     private TableColumn<maisonH, String> colimage_maison;
+    @FXML
+    private Button imprimer;
     
 
     /**
      * Initializes the controller class.
      */
      @FXML
-    private void handleButtonAction(ActionEvent event) {        
+    private void handleButtonAction(ActionEvent event) throws IOException {        
         
         if(event.getSource() == btnInsert_maison){
             insertRecord();
+            ajoutersimple(event);
         }else if (event.getSource() == btnUpdate_maison){
             updateRecord();
+            ajoutersimple(event);
+
         }else if(event.getSource() == btnDelete_maison){
             deleteButton();
+            Suppression(event);
         }
             
     }
@@ -105,7 +136,7 @@ public class MaisonController implements Initializable {
      public Connection getConnection(){
         Connection conn;
         try{
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test44", "root","");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/javafx", "root","");
             return conn;
         }catch(Exception ex){
             System.out.println("Error: " + ex.getMessage());
@@ -252,17 +283,148 @@ public class MaisonController implements Initializable {
             System.out.println("NO DATA EXIST!");
             
         }
+        
+    
+        
     }
         
-    /* public Boolean rechercheMaison(maisonH m , String nom , String localisation) {
-       
-     
-         if (m.getNom().equals(nom) || m.getLocalisation().equals(localisation) )
-         { 
-             return true;
-         } 
-     
-     return false;
-    }*/
+        
+         private void ajoutersimple(ActionEvent event) throws IOException 
+    {
+        if ( tfId_maison.getText().isEmpty() | tfNom_maison.getText().isEmpty() | tfLocalisation_maison.getText().isEmpty() | tfDescription_maison.getText().isEmpty()| tfPrix_maison.getText().isEmpty() )
+        {
+            Alert al = new Alert(Alert.AlertType.ERROR);
+            al.setHeaderText(null);
+            al.setContentText("Veuillez remplir les champs vides ! ");
+            al.showAndWait();
+        }
+ 
+        
 
 }
+         
+          private void Suppression(ActionEvent event){
+     Alert alert = new Alert(Alert.AlertType.INFORMATION);
+     alert.setTitle("Maison Supprimée Avec Succés");
+     alert.setContentText("");
+     alert.setHeaderText("Maison d'hote supprimée");
+     alert.showAndWait();
+    
+    
+    }
+    @FXML      
+    private void OnClickedPrint(ActionEvent event) {
+         PrinterJob job = PrinterJob.createPrinterJob();
+       
+        Node root= this.tvMaison;
+       
+       
+     if(job != null){
+     job.showPrintDialog(root.getScene().getWindow()); // Window must be your main Stage
+     Printer printer = job.getPrinter();
+     PageLayout pageLayout = printer.createPageLayout(Paper.A3, PageOrientation.LANDSCAPE, Printer.MarginType.HARDWARE_MINIMUM);
+     boolean success = job.printPage(pageLayout, root);
+     if(success){
+        job.endJob();
+     }
+     }
+    }
+    
+} 
+            
+      /*  public boolean controleTextFieldNonNumerique(TextField textField)
+        { 
+            if (!textField.getText().matches(".*[a-zA-Z].*"))
+        { Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText("Veuillez saisir des lettres"); alert.showAndWait(); return true; }
+        return false; }
+}*/
+        
+    
+         // @FXML public TableView table;
+
+   /* public void load(ActionEvent event) throws IOException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open file");
+        File file = fileChooser.showOpenDialog(tvMaison.getScene().getWindow());
+
+        ExcelFile workbook = ExcelFile.load(file.getAbsolutePath());
+        ExcelWorksheet worksheet = workbook.getWorksheet(0);
+        String[][] sourceData = new String[100][26];
+        for (int row = 0; row < sourceData.length; row++) {
+            for (int column = 0; column < sourceData[row].length; column++) {
+                ExcelCell cell = worksheet.getCell(row, column);
+                if (cell.getValueType() != CellValueType.NULL)
+                    sourceData[row][column] = cell.getValue().toString();
+            }
+        }*/
+               //     table.getColumns().add(column);
+
+    
+    
+     /*    private void fillTable(String[][] dataSource) {
+        table.getColumns().clear();
+
+        ObservableList<ObservableList<String>> data = FXCollections.observableArrayList();
+        for (String[] row : dataSource)
+            data.add(FXCollections.observableArrayList(row));
+        table.setItems(data);
+
+        for (int i = 0; i < dataSource[0].length; i++) {
+            final int currentColumn = i;
+            TableColumn<ObservableList<String>, String> column = new TableColumn<>(ExcelColumnCollection.columnIndexToName(currentColumn));
+            column.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue().get(currentColumn)));
+            column.setEditable(true);
+            column.setCellFactory(TextFieldTableCell.forTableColumn());
+            column.setOnEditCommit(
+                    (TableColumn.CellEditEvent<ObservableList<String>, String> t) -> {
+                        t.getTableView().getItems().get(t.getTablePosition().getRow()).set(t.getTablePosition().getColumn(), t.getNewValue());
+                    });
+            table.getColumns().add(column);
+        }
+    }
+*/
+    
+    
+   /* @FXML
+        public void saveFile(ActionEvent event) throws IOException {
+        ExcelFile file = new ExcelFile();
+        ExcelWorksheet worksheet = file.addWorksheet("sheet");
+        for (int row = 0; row < tvMaison.getItems().size(); row++) {
+            ObservableList cells = (ObservableList) tvMaison.getItems().get(row);
+            for (int column = 0; column < cells.size(); column++) {
+                if (cells.get(column) != null)
+                    worksheet.getCell(row, column).setValue(cells.get(column).toString());
+            }
+        }
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("XLSX files (*.xlsx)", "*.xlsx"),
+                new FileChooser.ExtensionFilter("XLS files (*.xls)", "*.xls"),
+                new FileChooser.ExtensionFilter("ODS files (*.ods)", "*.ods"),
+                new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.csv"),
+                new FileChooser.ExtensionFilter("HTML files (*.html)", "*.html")
+        );
+        File saveFile = fileChooser.showSaveDialog(tvMaison.getScene().getWindow());
+
+        file.save(saveFile.getAbsolutePath());
+    }*/
+ 
+        
+        
+
+        
+        
+        
+
+	
+
+
+
+
+
+
+
+
+

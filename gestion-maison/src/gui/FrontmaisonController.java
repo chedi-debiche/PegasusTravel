@@ -37,8 +37,6 @@ public class FrontmaisonController implements Initializable {
     @FXML
     private Label labelDias;
     @FXML
-    private TextField prixM;
-    @FXML
     private TableView<maisonH> tvMaison;
     @FXML
     private TableColumn<maisonH, Integer> colId_maison;
@@ -93,23 +91,7 @@ public class FrontmaisonController implements Initializable {
             maisonH maisonH;
             
             
-             if (rs.next()){
-        
-         String Nom = rs.getString(2);
-         String Localisation = rs.getString(3);
-         String Description = rs.getString(4);
-         Float Prix = rs.getFloat(5);
-         
-         nomlabel.setText(Nom);
-         localisationlabel.setText(Localisation);
-         descriptionlabel.setText(Description);
-         prixlabel.setText(Prix+"dt");
-
-         
-
-         
-    
-    }
+            
             /*while(rs.next()){
                 maisonH = new maisonH(rs.getInt("id_maison"), rs.getString("nom"), rs.getString("localisation"), rs.getString("description"),rs.getFloat("prix"));
                 maisonList.add(maisonH);

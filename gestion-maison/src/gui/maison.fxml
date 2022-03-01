@@ -66,12 +66,12 @@
             </LinearGradient>
          </textFill></Button>
       <ImageView fx:id="imageInsertView" fitHeight="117.0" fitWidth="157.0" layoutX="158.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="logo" disable="true" fitHeight="316.0" fitWidth="540.0" layoutX="-61.0" layoutY="-87.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="logo" disable="true" fitHeight="279.0" fitWidth="453.0" layoutX="-61.0" layoutY="-87.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Image/lojjjgo-removebg-preview.png" />
          </image>
       </ImageView>
-      <TextField fx:id="filterField" layoutX="1133.0" layoutY="71.0" prefHeight="31.0" prefWidth="157.0" promptText="Search ..." />
+      <TextField fx:id="filterField" layoutX="1054.0" layoutY="71.0" prefHeight="31.0" prefWidth="236.0" promptText="Search ..." />
       <Label fx:id="file_path" layoutX="20.0" layoutY="532.0" prefHeight="21.0" prefWidth="317.0" />
       <Button fx:id="InsertimgBtn" layoutX="32.0" layoutY="452.0" mnemonicParsing="false" onAction="#insertImage" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: #424242; -fx-background-radius: 20;" text="Upload">
          <textFill>
@@ -83,5 +83,11 @@
             </LinearGradient>
          </textFill>
       </Button>
+      <ImageView fitHeight="43.0" fitWidth="41.0" layoutX="994.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/printer.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="imprimer" layoutX="987.0" layoutY="59.0" mnemonicParsing="false" onAction="#OnClickedPrint" opacity="0.0" prefHeight="54.0" prefWidth="56.0" />
    </children>
 </AnchorPane>
