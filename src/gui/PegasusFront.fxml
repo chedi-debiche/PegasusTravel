@@ -146,7 +146,6 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Pane fx:id="paneMain" layoutX="1226.0" layoutY="5.0" prefHeight="71.0" prefWidth="97.0" />
          </children>
       </Pane>
       <ImageView fitHeight="589.0" fitWidth="1398.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
