@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="691.0" prefWidth="1056.0" style="-fx-background-color: #FFF8DC;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front.ShowEventsController">
+   <children>
+      <ImageView fitHeight="723.0" fitWidth="1056.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/rahma/Desktop/java/Pijava/photos/istockphoto-1135638647-170667a.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="promo" layoutX="282.0" layoutY="588.0" mnemonicParsing="false" onAction="#promotion" prefHeight="48.0" prefWidth="150.0" style="-fx-background-color: #FFCC80;" text="promotion " textFill="#4a3b35cc">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="bShow1" layoutX="279.0" layoutY="493.0" mnemonicParsing="false" onAction="#triParDate" prefHeight="60.0" prefWidth="500.0" style="-fx-background-color: #FFCC80;" text="afficher liste des événements triés par date " textFill="#4a3b35cc">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <ScrollPane fx:id="scroll" layoutX="105.0" layoutY="172.0" prefHeight="285.0" prefWidth="847.0" style="-fx-background-color: #A7C7E7;">
+         <content>
+            <GridPane fx:id="grid" gridLinesVisible="true" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #cfd4d9;">
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+      <ImageView fitHeight="259.0" fitWidth="379.0" layoutX="-66.0" layoutY="-58.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/rahma/Desktop/java/Pijava/photos/logopegasus.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="reserver" layoutX="453.0" layoutY="590.0" mnemonicParsing="false" onAction="#book" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: #FFCC80;" text="Réserver" textFill="#4a3b35cc">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="annuler" layoutX="629.0" layoutY="590.0" mnemonicParsing="false" onAction="#cancel" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: #FFCC80;" text="Annuler " textFill="#4a3b35cc">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
