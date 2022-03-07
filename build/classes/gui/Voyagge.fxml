@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1309.0" style="-fx-background-color: #424242;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.VoyaggeController">
+   <children>
+      <ImageView fx:id="logo" fitHeight="167.0" fitWidth="306.0" layoutX="-11.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/lojjjgo-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="image_view" fitHeight="107.0" fitWidth="190.0" layoutX="96.0" layoutY="314.0" pickOnBounds="true" preserveRatio="true" />
+      <TableView fx:id="tvVoyage" layoutX="322.0" layoutY="94.0" onMouseClicked="#handleMouseClicked" prefHeight="580.0" prefWidth="955.0" style="-fx-background-color: #212121;">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="83.0" text="N Voyage" />
+          <TableColumn fx:id="colNom" prefWidth="209.0" text="Nom" />
+            <TableColumn fx:id="colDestination" prefWidth="116.0" text="Destination" />
+            <TableColumn fx:id="colDescription" prefWidth="341.0" text="Description" />
+            <TableColumn fx:id="colPrix" prefWidth="68.0" text="Prix" />
+            <TableColumn fx:id="colImage" prefWidth="137.0" text="Image" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnInsert" layoutX="84.0" layoutY="485.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="33.0" prefWidth="151.0" style="-fx-background-color: #000000; -fx-background-radius: 40;" text="Ajouter voyage">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.5476190476190477">
+               <stops>
+                  <Stop color="#c29e0ed2" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnUpdate" layoutX="84.0" layoutY="535.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="33.0" prefWidth="151.0" style="-fx-background-color: #000000; -fx-background-radius: 30;" text="Modifier voyage">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.5476190476190477">
+               <stops>
+                  <Stop color="#c29e0ed2" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnDelete" layoutX="84.0" layoutY="585.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="33.0" prefWidth="151.0" style="-fx-background-color: #000000; -fx-background-radius: 30;" text="Supprimer voyage">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.5476190476190477">
+               <stops>
+                  <Stop color="#c29e0ed2" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TextField fx:id="filterField" layoutX="602.0" layoutY="41.0" prefHeight="31.0" prefWidth="176.0" promptText="Search .." style="-fx-background-radius: 12;" />
+      <Button fx:id="insert_image" layoutX="23.0" layoutY="372.0" mnemonicParsing="false" onAction="#insertImage" prefHeight="21.0" prefWidth="61.0" style="-fx-background-radius: 10;" text="Upload">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label fx:id="file_path" layoutX="71.0" layoutY="424.0" prefHeight="21.0" prefWidth="213.0" />
+      <Button layoutX="1082.0" layoutY="40.0" mnemonicParsing="false" onAction="#Map" prefHeight="33.0" prefWidth="123.0" style="-fx-background-radius: 30; -fx-background-color: #000000;" text="Localisation">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#bca810" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="56.0" fitWidth="122.0" layoutX="1205.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/xmap-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="imprimer" layoutX="947.0" layoutY="41.0" mnemonicParsing="false" onAction="#OnClickedPrint" prefHeight="33.0" prefWidth="115.0" style="-fx-background-radius: 30; -fx-background-color: #000000;" text="Imprimer">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#bca810" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="816.0" layoutY="41.0" mnemonicParsing="false" onAction="#stat" prefHeight="33.0" prefWidth="115.0" style="-fx-background-radius: 30; -fx-background-color: #000000;" text="Statistiques">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#d6c03a" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ImageView fitHeight="72.0" fitWidth="32.0" layoutX="562.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/search.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="85.0" layoutY="104.0" prefHeight="220.0" prefWidth="213.0" spacing="10.0">
+         <children>
+            <TextField fx:id="tfId" prefHeight="25.0" prefWidth="162.0" promptText="Numero de voyage" />
+            <TextField fx:id="tfNom" promptText="Nom du voyage" />
+            <TextField fx:id="tfDestination" layoutX="10.0" layoutY="35.0" promptText="Destination" />
+            <TextField fx:id="tfDescription" layoutX="10.0" layoutY="60.0" promptText="Description du voyage" />
+            <TextField fx:id="tfPrix" layoutX="10.0" layoutY="85.0" prefHeight="25.0" prefWidth="213.0" promptText="Prix" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

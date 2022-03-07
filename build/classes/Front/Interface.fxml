@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-clor: #FFDEAD;" styleClass="#FAFAD2" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front.InterfaceController">
+   <children>
+      <ImageView fitHeight="710.0" fitWidth="920.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/xampp/htdocs/img/triangle-solid-black-gold-4k-wk.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="tbGest" layoutX="302.0" layoutY="181.0" mnemonicParsing="false" onAction="#gestion" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #000000; -fx-background-radius: 30;" text="Gestions Des Reclamation">
+         <font>
+            <Font name="Yu Gothic UI Semibold" size="15.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="WHITE" />
+                  <Stop color="#d1c74f" offset="0.007246376811594203" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <ImageView fitHeight="249.0" fitWidth="381.0" layoutX="-65.0" layoutY="-76.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../xampp/htdocs/img/lojjjgo-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="tbpub" layoutX="302.0" layoutY="273.0" mnemonicParsing="false" onAction="#pub" prefHeight="60.0" prefWidth="287.0" style="-fx-background-color: #000000; -fx-background-radius: 30;" text="Gestion Des Publication">
+         <font>
+            <Font name="Yu Gothic UI Semilight" size="15.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.47572815533980584" radius="0.5">
+               <stops>
+                  <Stop color="WHITE" />
+                  <Stop color="#d1c74f" offset="0.007246376811594203" />
+                  <Stop color="#cfc44ef2" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+
+<AnchorPane id="AnchorPane" prefHeight="774.0" prefWidth="1286.0" style="-fx-background-color: #424242;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MaisonController">
+   <children>
+      <VBox layoutX="44.0" layoutY="207.0" prefHeight="176.0" prefWidth="271.0" spacing="10.0">
+         <children>
+            <TextField fx:id="tfId_maison" promptText="id maison" style="-fx-background-radius: 25;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <TextField fx:id="tfNom_maison" promptText="nom maison" style="-fx-background-radius: 25;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <TextField fx:id="tfLocalisation_maison" layoutX="10.0" layoutY="41.0" promptText="localisation maison d'hote" style="-fx-background-radius: 25;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <TextField fx:id="tfDescription_maison" layoutX="10.0" layoutY="72.0" promptText="description maison d'hote" style="-fx-background-radius: 25;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <TextField fx:id="tfPrix_maison" layoutX="10.0" layoutY="103.0" promptText="prix" style="-fx-background-radius: 25;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+         </children>
+      </VBox>
+      <TableView fx:id="tvMaison" layoutX="334.0" layoutY="117.0" onMouseClicked="#handleMouseClicked" prefHeight="610.0" prefWidth="938.0" style="-fx-background-radius: 20; -fx-background-color: #000000;">
+        <columns>
+          <TableColumn fx:id="colId_maison" prefWidth="48.0" text="ID" />
+          <TableColumn fx:id="colNom_maison" prefWidth="165.0" text="Nom maison d'hote" />
+            <TableColumn fx:id="colLocalisation_maison" prefWidth="155.0" text="localisation" />
+            <TableColumn fx:id="colDescription_maison" prefWidth="231.0" text="Description" />
+            <TableColumn fx:id="colPrix_maison" prefWidth="125.0" text="Prix" />
+            <TableColumn fx:id="colimage_maison" prefWidth="211.0" text="Image" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnInsert_maison" layoutX="79.0" layoutY="587.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: #000000; -fx-background-radius: 30;" text="Ajouter maison d'hote">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#e4c219" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnUpdate_maison" layoutX="79.0" layoutY="631.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="33.0" prefWidth="200.0" style="-fx-background-color: #000000; -fx-background-radius: 30;" text="modifier maison d'hote">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#e4c219" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnDelete_maison" layoutX="79.0" layoutY="678.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="33.0" prefWidth="200.0" style="-fx-background-color: #000000; -fx-background-radius: 30;" text="supprimer maison d'hote">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#e4c219" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ImageView fx:id="imageInsertView" fitHeight="117.0" fitWidth="186.0" layoutX="117.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="logo" disable="true" fitHeight="279.0" fitWidth="453.0" layoutX="-61.0" layoutY="-87.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/lojjjgo-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="filterField" layoutX="1026.0" layoutY="72.0" prefHeight="31.0" prefWidth="236.0" promptText="Search ..." style="-fx-background-radius: 30;">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <Label fx:id="file_path" layoutX="44.0" layoutY="546.0" prefHeight="21.0" prefWidth="271.0" />
+      <ImageView fitHeight="54.0" fitWidth="56.0" layoutX="897.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/printer.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="imprimer" layoutX="890.0" layoutY="39.0" mnemonicParsing="false" onAction="#OnClickedPrint" opacity="0.0" prefHeight="65.0" prefWidth="69.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ImageView fitHeight="33.0" fitWidth="34.0" layoutX="982.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/search.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="54.0" layoutX="52.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/add-image.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="InsertimgBtn" layoutX="46.0" layoutY="418.0" mnemonicParsing="false" onAction="#insertImage" opacity="0.0" prefHeight="54.0" prefWidth="61.0" style="-fx-background-color: #000000; -fx-background-radius: 30;" text="Upload">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#e4c219" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

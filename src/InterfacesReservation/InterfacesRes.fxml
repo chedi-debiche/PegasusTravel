@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="627.0" prefWidth="725.0" style="-fx-background-color: #424242;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InterfacesReservation.InterfacesResController">
+   <children>
+      <ImageView fitHeight="90.0" fitWidth="104.0" layoutX="426.0" layoutY="476.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/CC/Pictures/integrationTest1/src/Image/external-delete-user-interface-wanicon-lineal-color-wanicon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="269.0" fitWidth="436.0" layoutX="-73.0" layoutY="-88.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/CC/Pictures/integrationTest1/src/Image/logopegasus.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="84.0" layoutY="85.0" />
+      <Button fx:id="bAfficher1" layoutX="432.0" layoutY="290.0" mnemonicParsing="false" onAction="#showRes" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #000000; -fx-background-radius: 30;" text="Afficher">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#d3c526" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Button>
+      <ImageView fitHeight="61.0" fitWidth="61.0" layoutX="547.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/search.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="bSupprimer" layoutX="432.0" layoutY="489.0" mnemonicParsing="false" onAction="#deleteRes" opacity="0.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #000000; -fx-background-radius: 30;" text="Supprimer">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#d3c526" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Button>
+      <Button fx:id="bChercher" layoutX="547.0" layoutY="96.0" mnemonicParsing="false" onAction="#findRes" opacity="0.0" prefHeight="61.0" prefWidth="61.0" style="-fx-background-color: #424242; -fx-background-radius: 30;" textFill="#d1c74f">
+         <font>
+            <Font size="22.0" />
+         </font></Button>
+      <TextField fx:id="tfChercherRes" layoutX="175.0" layoutY="109.0" prefHeight="36.0" prefWidth="357.0" promptText="chercher un événement" style="-fx-background-radius: 30;" />
+      <Button fx:id="bPdf" layoutX="432.0" layoutY="190.0" mnemonicParsing="false" onAction="#getPdf" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #000000; -fx-background-radius: 30;" text="PDF">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#d3c526" />
+                  <Stop color="#f8f8f8" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Button>
+      <ImageView fitHeight="70.0" fitWidth="74.0" layoutX="570.0" layoutY="489.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/CC/Pictures/integrationTest1/src/Image/printer.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="bprint" layoutX="568.0" layoutY="494.0" mnemonicParsing="false" onAction="#imprimer" opacity="0.0" prefHeight="61.0" prefWidth="74.0" style="-fx-background-color: #424242; -fx-background-radius: 30;">
+         <textFill>
+            <LinearGradient endX="0.8285714285714285" endY="0.5857142857142856" startX="0.680952380952381" startY="1.0">
+               <stops>
+                  <Stop color="#d1c74f" />
+                  <Stop color="#fffde9c2" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="bRefresh" layoutX="432.0" layoutY="397.0" mnemonicParsing="false" onAction="#refresh" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #000000; -fx-background-radius: 30;" text="Refresh ">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#d3c526" />
+                  <Stop color="#f8f8f8" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <TableView fx:id="tv" layoutX="34.0" layoutY="262.0" prefHeight="317.0" prefWidth="300.0" style="-fx-background-color: #e7dd71;">
+        <columns>
+          <TableColumn fx:id="nomCol" prefWidth="150.0" text="Nom " />
+          <TableColumn fx:id="dateCol" prefWidth="150.0" text="Date " />
+            <TableColumn fx:id="idrCol" prefWidth="75.0" text="idr" visible="false" />
+            <TableColumn fx:id="ideCol" prefWidth="81.0" text="ide" visible="false" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

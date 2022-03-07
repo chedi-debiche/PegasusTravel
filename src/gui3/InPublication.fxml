@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorpane" prefHeight="796.0" prefWidth="1257.0" style="-fx-background-color: #424242;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui3.InPublicationController">
+   <children>
+      <Label layoutX="448.0" layoutY="52.0" prefHeight="76.0" prefWidth="299.0" />
+      <Label layoutX="14.0" layoutY="167.0" prefHeight="58.0" prefWidth="192.0" text="DatePublication :" textFill="#d1c328" />
+      <DatePicker fx:id="tfDate" accessibleRole="HYPERLINK" blendMode="SRC_ATOP" layoutX="174.0" layoutY="176.0" prefHeight="40.0" prefWidth="220.0" />
+      <Label layoutX="19.0" layoutY="250.0" prefHeight="40.0" prefWidth="113.0" text="Path :" textFill="#d3c526" />
+      <Button fx:id="tbChoisir" blendMode="DARKEN" layoutX="153.0" layoutY="228.0" mnemonicParsing="false" onAction="#HandleButtonAction" prefHeight="58.0" prefWidth="228.0" style="-fx-background-radius: 30; -fx-background-color: #000000;" text="choisir une Publication ">
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.9077669902912621" startX="1.0" startY="1.0">
+               <stops>
+                  <Stop color="WHITE" />
+                  <Stop color="#d3c526" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Button>
+      <Label layoutX="19.0" layoutY="355.0" prefHeight="40.0" prefWidth="139.0" text="Description:" textFill="#d3c526" />
+      <TextArea fx:id="tfDescrip" layoutX="157.0" layoutY="313.0" prefHeight="188.0" prefWidth="228.0" />
+      <TableView fx:id="tvAff" layoutX="493.0" layoutY="182.0" prefHeight="387.0" prefWidth="616.0" style="-fx-background-color: #000000;">
+        <columns>
+          <TableColumn fx:id="cid" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="cdate" prefWidth="201.0" text="DatePublication" />
+            <TableColumn fx:id="cpath" prefWidth="141.0" text="Path" />
+            <TableColumn fx:id="cdesc" prefWidth="194.0" text="Description" />
+        </columns>
+      </TableView>
+      <Button fx:id="tbAjouter" layoutX="777.0" layoutY="619.0" mnemonicParsing="false" onAction="#AjouterPublic" prefHeight="58.0" prefWidth="165.0" style="-fx-background-radius: 30; -fx-background-color: #000000;" text="Ajouter" textFill="#d3c526" />
+      <ImageView fx:id="VImage" fitHeight="150.0" fitWidth="200.0" layoutX="167.0" layoutY="527.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="20.0" layoutY="581.0" prefHeight="21.0" prefWidth="104.0" text="Publication :" textFill="#d3c526" />
+      <Button fx:id="tbAfficherr" layoutX="890.0" layoutY="688.0" mnemonicParsing="false" onAction="#AfficherPub" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 30; -fx-background-color: #000000;" text="Afficher" textFill="#d3c526" />
+      <Button fx:id="tbsupp" layoutX="656.0" layoutY="698.0" mnemonicParsing="false" onAction="#SupprimerPub" prefHeight="58.0" prefWidth="165.0" style="-fx-background-radius: 30; -fx-background-color: #000000;" text="Supprimer" textFill="#d3c526" />
+      <Button fx:id="tbModP" cache="true" cacheHint="SCALE_AND_ROTATE" depthTest="DISABLE" layoutX="538.0" layoutY="630.0" onAction="#ModifierPub" prefHeight="58.0" prefWidth="165.0" style="-fx-background-radius: 30; -fx-background-color: #000000;" text="Modifier" textFill="#d3c526" />
+      <TextField fx:id="tpRech" layoutX="614.0" layoutY="97.0" onAction="#RecherAv" prefHeight="50.0" prefWidth="276.0" promptText="Recherch...." style="-fx-background-radius: 30;" />
+      <ImageView fitHeight="69.0" fitWidth="65.0" layoutX="1025.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/CC/Pictures/integrationTest1/src/Image/search.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="tvRech" blendMode="SRC_ATOP" layoutX="1018.0" layoutY="75.0" mnemonicParsing="false" onAction="#RecherchModAp" opacity="0.0" prefHeight="76.0" prefWidth="81.0" style="-fx-background-radius: 30; -fx-background-color: #000000;" text="Rechercher" textFill="#d3c526" />
+      <ImageView fitHeight="248.0" fitWidth="501.0" layoutX="-46.0" layoutY="-81.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/CC/Pictures/integrationTest1/src/Image/logopegasus.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="88.0" layoutX="1086.0" layoutY="698.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/CC/Pictures/integrationTest1/src/Image/comment-imprimer-document-telephone-android9.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="imprimer" layoutX="1082.0" layoutY="692.0" mnemonicParsing="false" onAction="#OnClickedPrint" opacity="0.0" prefHeight="93.0" prefWidth="90.0" style="-fx-background-radius: 30; -fx-background-color: #000000;" text="imprimer" textFill="#d3c526" />
+   </children>
+</AnchorPane>

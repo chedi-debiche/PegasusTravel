@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="696.0" prefWidth="935.0" style="-fx-background-color: #424242;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AdminpageController">
+   <children>
+      <VBox layoutX="14.0" layoutY="177.0" prefHeight="397.0" prefWidth="97.0" spacing="28.0">
+         <children>
+            <Text layoutX="10.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#c6bd10" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#c6bd10" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last name">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#c6bd10" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#c6bd10" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#c6bd10" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Position">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#c6bd10" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salary">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#c6bd10" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+         </children>
+      </VBox>
+      <ButtonBar layoutX="-25.0" layoutY="576.0" prefHeight="45.0" prefWidth="370.0">
+        <buttons>
+          <Button fx:id="add_emp" mnemonicParsing="false" onAction="#add_emp" style="-fx-background-color: #000000; -fx-background-radius: 25;" text="Insert" textFill="#e4c811">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="upd_emp" mnemonicParsing="false" onAction="#Edit" style="-fx-background-color: #000000; -fx-background-radius: 25;" text="Update" textFill="#e4c811">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="del_emp" mnemonicParsing="false" onAction="#Delete" prefHeight="26.0" prefWidth="99.0" style="-fx-background-color: #000000; -fx-background-radius: 25;" text="Delete" textFill="#e4c811">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+        </buttons>
+      </ButtonBar>
+      <Text layoutX="301.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="gestion des employées : " wrappingWidth="488.57177734375">
+         <font>
+            <Font name="System Bold Italic" size="32.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.4583333486860448">
+               <stops>
+                  <Stop color="#cfdc18" />
+                  <Stop color="#cfdc18" offset="0.007680491551459294" />
+                  <Stop color="#c6a10c" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <TableView fx:id="emp_tab" layoutX="358.0" layoutY="167.0" onMouseClicked="#getSelected" prefHeight="482.0" prefWidth="550.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="358.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="167.0">
+        <columns>
+          <TableColumn fx:id="coll_id" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="coll_name" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="call_lastn" prefWidth="75.0" text="Last name" />
+            <TableColumn fx:id="call_email" prefWidth="75.0" text="Email" />
+            <TableColumn fx:id="call_pwd" prefWidth="75.0" text="Password" />
+            <TableColumn fx:id="call_pos" prefWidth="86.0" text="Position" />
+            <TableColumn fx:id="call_sal" prefWidth="88.0" text="Salary" />
+        </columns>
+      </TableView>
+      <VBox layoutX="123.0" layoutY="179.0" prefHeight="346.0" prefWidth="198.0" spacing="30.0">
+         <children>
+            <TextField fx:id="emp_id" layoutX="10.0" layoutY="10.0" />
+            <TextField fx:id="emp_fn" />
+            <TextField fx:id="emp_ln" />
+            <TextField fx:id="emp_e" />
+            <TextField fx:id="emp_pwd" />
+            <TextField fx:id="emp_pos" />
+            <TextField fx:id="emp_sal" />
+         </children>
+      </VBox>
+      <TextField fx:id="emp_rech" layoutX="567.0" layoutY="119.0" promptText="Search" />
+      <Text fill="#f2922d" layoutX="499.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="btn_logouta" layoutX="815.0" layoutY="40.0" mnemonicParsing="false" onAction="#logout" text="Log out" />
+      <ImageView fitHeight="193.0" fitWidth="327.0" layoutX="-36.0" layoutY="-41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/logopegasus.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

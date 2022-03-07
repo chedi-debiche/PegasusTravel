@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="679.0" prefWidth="967.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gui.AboutUsController">
+   <children>
+      <ImageView fitHeight="295.0" fitWidth="576.0" layoutX="377.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/best-about-us-pages-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="-3.0" layoutY="-22.0" prefHeight="132.0" prefWidth="970.0" style="-fx-background-color: #000000;" />
+      <ImageView fitHeight="249.0" fitWidth="428.0" layoutX="-61.0" layoutY="-81.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logopegasus.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="60.0" layoutY="218.0" prefHeight="76.0" prefWidth="551.0" text="A PROPOS DE NOUS : " textFill="#7c7206">
+         <font>
+            <Font name="Impact" size="32.0" />
+         </font>
+      </Label>
+      <Text layoutX="60.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pagasus-Travel Une agence de voyage qui organise et propose des offres de voyages, de vols, d'hôtels et de séjours aux consommateurs.. Elle se pose en intermédiaire entre les consommateurs et les différents prestataires sur le marché du tourisme: compagnies aériennes, hôtels, loueurs de voitures." wrappingWidth="428.30590429902077">
+         <font>
+            <Font name="Bradley Hand ITC" size="25.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

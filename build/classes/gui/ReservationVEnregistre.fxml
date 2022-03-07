@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="656.0" prefWidth="1069.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ReservationVEnregistreController">
+   <children>
+      <ImageView fitHeight="716.0" fitWidth="1096.0" layoutX="-2.0" layoutY="-60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/istockphoto-1135638647-170667a.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnUpdate" layoutX="587.0" layoutY="487.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="43.0" prefWidth="217.0" style="-fx-background-color: #ffcc80; -fx-background-radius: 20;" text="Modifier Votre Réservation" textFill="#4a3b34">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnDelete" layoutX="812.0" layoutY="487.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="43.0" prefWidth="229.0" style="-fx-background-color: #ffcc80; -fx-background-radius: 20;" text="Supprimer Votre Réservation" textFill="#4a3b34">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Button>
+      <TextField fx:id="tfId_resv" alignment="CENTER" layoutX="794.0" layoutY="198.0" prefHeight="33.0" prefWidth="236.0" promptText="......." style="-fx-background-radius: 10;">
+         <font>
+            <Font name="Arial Black" size="15.0" />
+         </font></TextField>
+      <TextField fx:id="tfNbr" alignment="CENTER" layoutX="794.0" layoutY="260.0" prefHeight="32.0" prefWidth="236.0" promptText="........" style="-fx-background-radius: 10;">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="tfId" alignment="CENTER" layoutX="797.0" layoutY="386.0" prefHeight="33.0" prefWidth="229.0" promptText="......." style="-fx-background-radius: 10;">
+         <font>
+            <Font name="Arial Black" size="15.0" />
+         </font></TextField>
+      <DatePicker fx:id="tfDate" layoutX="797.0" layoutY="324.0" prefHeight="31.0" prefWidth="229.0" style="-fx-background-radius: 10;" />
+      <Label layoutX="541.0" layoutY="201.0" text="Votre numero passport :">
+         <font>
+            <Font name="Berlin Sans FB" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="563.0" layoutY="263.0" text="Nombre de personnes :">
+         <font>
+            <Font name="Berlin Sans FB" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="594.0" layoutY="327.0" text="Choisir votre date :">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="592.0" layoutY="388.0" text="Numero de voyage :">
+         <font>
+            <Font name="Berlin Sans FB" size="21.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="319.0" fitWidth="441.0" layoutX="135.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/avion-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="17.0" layoutY="324.0" prefHeight="28.0" prefWidth="259.0" text="Liste de vos réservations : ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <HBox layoutX="912.0" layoutY="598.0" prefHeight="58.0" prefWidth="143.0" spacing="10.0">
+         <children>
+            <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/facebook%20(1).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/instagram%20(1).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/linkedin.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <ImageView fitHeight="210.0" fitWidth="347.0" layoutX="-38.0" layoutY="-60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logopegasus.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tvReservationV" layoutX="17.0" layoutY="367.0" onMouseClicked="#handleMouseClicked" prefHeight="84.0" prefWidth="537.0">
+        <columns>
+          <TableColumn fx:id="colid_res" prefWidth="169.0" text="NUMERO PASSPORT" />
+          <TableColumn fx:id="colNbr" prefWidth="108.0" text="N PERSSONES" />
+            <TableColumn fx:id="colDate" prefWidth="130.0" text="DATE" />
+            <TableColumn fx:id="colID" prefWidth="129.0" text="N VOYAGE" />
+        </columns>
+         <effect>
+            <SepiaTone level="0.21" />
+         </effect>
+      </TableView>
+   </children>
+</AnchorPane>

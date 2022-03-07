@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane id="AnchorPane" prefHeight="547.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.WebViewController">
+    <children>
+        <AnchorPane id="AnchorPane" layoutX="0.0" layoutY="0.0" style="-fx-background-color: #000000;">
+            <children>
+                <AnchorPane id="AnchorPane" layoutX="0.0" layoutY="0.0">
+                    <children>
+                        <GridPane id="GridPane" layoutX="0.0" layoutY="0.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                        </GridPane>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+        <BorderPane prefHeight="671.0" prefWidth="831.0" style="-fx-background-color: #424242;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <WebView fx:id="webView" minHeight="800.0" minWidth="600.0" prefHeight="800.0" prefWidth="850.0" />
+            </center>
+            <top>
+                <HBox prefHeight="59.0" prefWidth="850.0">
+               <children>
+                  <Pane prefHeight="123.0" prefWidth="850.0">
+                     <children>
+                        <ImageView fitHeight="39.0" fitWidth="53.0" layoutX="563.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/refresh.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="44.0" fitWidth="40.0" layoutX="632.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/google.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="action" layoutX="620.0" layoutY="1.0" mnemonicParsing="false" onAction="#google" opacity="0.0" prefHeight="61.0" prefWidth="63.0" text="Open Google">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fitHeight="46.0" fitWidth="46.0" layoutX="692.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/youtube.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="688.0" layoutY="6.0" mnemonicParsing="false" onAction="#Youtube" opacity="0.0" prefHeight="49.0" prefWidth="56.0" text="youtube">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fitHeight="46.0" fitWidth="46.0" layoutX="759.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/linkdin.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="755.0" layoutY="5.0" mnemonicParsing="false" onAction="#Linkedin" opacity="0.0" prefHeight="49.0" prefWidth="56.0" text="linkedin">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fitHeight="234.0" fitWidth="392.0" layoutX="-52.0" layoutY="-90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/lojjjgo-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="559.0" layoutY="10.0" mnemonicParsing="false" onAction="#Reload" opacity="0.0" prefHeight="39.0" prefWidth="48.0" text="Reload">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children></HBox>
+            </top>
+        </BorderPane>
+    </children>
+</AnchorPane>

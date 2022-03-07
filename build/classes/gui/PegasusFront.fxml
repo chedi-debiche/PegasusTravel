@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="951.0" prefWidth="1398.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PegasusFrontController">
+   <children>
+      <Pane prefHeight="59.0" prefWidth="1398.0" style="-fx-background-color: #0CA3B3;">
+         <children>
+            <Button fx:id="buttonAbout" layoutX="630.0" layoutY="4.0" mnemonicParsing="false" onAction="#About" opacity="0.0" prefHeight="45.0" prefWidth="126.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label layoutX="32.0" layoutY="17.0" text="PegasusTravel 1ère agence de voyage en ligne" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="42.0" fitWidth="29.0" layoutX="398.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/email.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="434.0" layoutY="19.0" text="client@pegasustravel.com" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="59.0" fitWidth="38.0" layoutX="1186.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/phone.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="1234.0" layoutY="6.0" text="70980551">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="32.0" fitWidth="38.0" layoutX="654.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/handshake.png" />
+               </image>
+            </ImageView>
+            <HBox layoutX="899.0" layoutY="12.0" prefHeight="45.0" prefWidth="138.0" spacing="10.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/facebook%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="39.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/instagram%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/linkedin.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Label layoutX="699.0" layoutY="20.0" text="Bienvenue" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutY="59.0" prefHeight="86.0" prefWidth="1398.0" style="-fx-background-color: #ECEEEF;">
+         <children>
+            <ImageView fitHeight="287.0" fitWidth="453.0" layoutX="-71.0" layoutY="-95.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/lojjjgo-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="325.0" layoutY="35.0" text="Voyages" textFill="#0d00ff">
+               <font>
+                  <Font name="Copperplate Gothic Light" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="466.0" layoutY="33.0" text="Maisons d'hotes" textFill="#0d00ff">
+               <font>
+                  <Font name="Copperplate Gothic Light" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="685.0" layoutY="32.0" text="evenements" textFill="#0d00ff">
+               <font>
+                  <Font name="Copperplate Gothic Light" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="867.0" layoutY="29.0" text="contact us" textFill="#0d00ff">
+               <font>
+                  <Font name="Copperplate Gothic Light" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="301.0" layoutY="-2.0" mnemonicParsing="false" onAction="#Voyages" opacity="0.0" prefHeight="86.0" prefWidth="138.0" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="840.0" layoutY="-1.0" mnemonicParsing="false" onAction="#ContactBtn" opacity="0.0" prefHeight="86.0" prefWidth="177.0" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <ImageView fitHeight="45.0" fitWidth="47.0" layoutX="1173.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/cloudy.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="WeatherBtn" layoutX="1165.0" layoutY="10.0" mnemonicParsing="false" onAction="#Weather" opacity="0.0" prefHeight="61.0" prefWidth="61.0" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="eventBtn" layoutX="669.0" mnemonicParsing="false" onAction="#EvenementsBtn" opacity="0.0" prefHeight="86.0" prefWidth="171.0" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label layoutX="1044.0" layoutY="27.0" text="a propos" textFill="#0d00ff">
+               <font>
+                  <Font name="Copperplate Gothic Light" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="1017.0" mnemonicParsing="false" onAction="#About" opacity="0.0" prefHeight="84.0" prefWidth="148.0" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <ImageView fitHeight="61.0" fitWidth="45.0" layoutX="1327.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/logout.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btn_logouta" layoutX="1317.0" layoutY="10.0" mnemonicParsing="false" onAction="#logout" opacity="0.0" prefHeight="59.0" prefWidth="61.0" text="LogOut">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="444.0" mnemonicParsing="false" onAction="#maisonHotes" opacity="0.0" prefHeight="86.0" prefWidth="222.0" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Pane fx:id="paneMain" layoutX="1226.0" layoutY="5.0" prefHeight="71.0" prefWidth="97.0" />
+         </children>
+      </Pane>
+      <ImageView fitHeight="589.0" fitWidth="1398.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/Facebook%20Pegasustravel%20Twitter%20@Pegasustravel%20Instagram%20@Pegasustravel%20Youtube%20Pegasustravel%20(2).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="581.0" fitWidth="820.0" layoutX="363.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/b44c665c88d2d14d1b4a6904bd133acb.gif" />
+         </image>
+      </ImageView>
+      <Pane layoutX="-1.0" layoutY="726.0" prefHeight="190.0" prefWidth="1398.0" style="-fx-background-color: #ECEEEF;">
+         <children>
+            <Label layoutX="606.0" layoutY="5.0" text="Nos 5 garanties ">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="70.0" fitWidth="61.0" layoutX="204.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/1.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="149.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Une proximité des clients : 26 points de vente sur tout le territoire tunisien" textAlignment="CENTER" wrappingWidth="184.13817366212606" />
+            <Text layoutX="385.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Un call-center toujours à l'écoute de nos clients même en période de grand flux." textAlignment="CENTER" wrappingWidth="184.13817366212606" />
+            <ImageView fitHeight="70.0" fitWidth="61.0" layoutX="447.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="61.0" layoutX="669.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/3.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="615.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Des tarifs les plus attractifs du marché (en TTC)" textAlignment="CENTER" wrappingWidth="184.13817366212606" />
+            <ImageView fitHeight="70.0" fitWidth="61.0" layoutX="887.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/4.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="841.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Une exhaustivité de l'offre Plus de 884.000 hôtels dans le monde" textAlignment="CENTER" wrappingWidth="184.13817366212606" />
+            <Text layoutX="1068.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plus de 15 ans d'expérience sur le marché" textAlignment="CENTER" wrappingWidth="184.13817366212606" />
+            <ImageView fitHeight="70.0" fitWidth="61.0" layoutX="1130.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/5.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="-1.0" prefHeight="190.0" prefWidth="1398.0" />
+         </children>
+      </Pane>
+      <Pane layoutY="916.0" prefHeight="38.0" prefWidth="1398.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label layoutX="1073.0" layoutY="7.0" text="©2022 PegasusTravel- Tous droits réservés." textFill="#f8f8f8" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

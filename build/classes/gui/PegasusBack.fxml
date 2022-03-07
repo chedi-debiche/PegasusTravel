@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="734.0" prefWidth="1284.0" style="-fx-background-color: #424242;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PegasusBackController">
+   <children>
+      <Pane prefHeight="740.0" prefWidth="428.0" style="-fx-background-color: #000000; -fx-border-color: #000000;">
+         <children>
+            <ImageView fitHeight="298.0" fitWidth="530.0" layoutX="-51.0" layoutY="-80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/lojjjgo-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="53.0" fitWidth="40.0" layoutX="40.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/user.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="92.0" layoutY="256.0" prefHeight="23.0" prefWidth="245.0" text="Gestion des utilisateurs" textFill="WHITE">
+               <font>
+                  <Font name="Bodoni MT Black" size="17.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="56.0" fitWidth="47.0" layoutX="36.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/home.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="93.0" layoutY="185.0" prefHeight="23.0" prefWidth="245.0" text="Acceuil" textFill="WHITE">
+               <font>
+                  <Font name="Bodoni MT Black" size="17.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="40.0" fitWidth="47.0" layoutX="38.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/airplane.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="92.0" layoutY="331.0" prefHeight="23.0" prefWidth="245.0" text="Gestion des voyages " textFill="WHITE">
+               <font>
+                  <Font name="Bodoni MT Black" size="17.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="39.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/house.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="93.0" layoutY="405.0" prefHeight="23.0" prefWidth="266.0" text="Gestion des maisons d'hôtes " textFill="WHITE">
+               <font>
+                  <Font name="Bodoni MT Black" size="17.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="38.0" layoutY="466.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/event.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="90.0" layoutY="475.0" prefHeight="23.0" prefWidth="266.0" text="Gestion des évènements" textFill="WHITE">
+               <font>
+                  <Font name="Bodoni MT Black" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="86.0" layoutY="553.0" prefHeight="23.0" prefWidth="266.0" text="Gestion des contacts" textFill="WHITE">
+               <font>
+                  <Font name="Bodoni MT Black" size="17.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="55.0" fitWidth="40.0" layoutX="38.0" layoutY="544.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/contact-info.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="Maison_BackBtn" layoutY="379.0" mnemonicParsing="false" onAction="#MaisonBackBtn" opacity="0.45" prefHeight="74.0" prefWidth="428.0" style="-fx-border-color: #EFCB05;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="Voyage_backBtn" layoutY="305.0" mnemonicParsing="false" onAction="#VoyageBackBtn" opacity="0.45" prefHeight="74.0" prefWidth="428.0" style="-fx-border-color: #EFCB05;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="homeBtn" layoutY="157.0" mnemonicParsing="false" onAction="#HomeFront" opacity="0.49" prefHeight="74.0" prefWidth="428.0" style="-fx-border-color: #EFCB05;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="Event_backBtn" layoutY="453.0" mnemonicParsing="false" onAction="#EventSponsor" opacity="0.45" prefHeight="74.0" prefWidth="428.0" style="-fx-border-color: #EFCB05;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="Contact_BackBtn" layoutY="528.0" mnemonicParsing="false" onAction="#contact" opacity="0.45" prefHeight="74.0" prefWidth="428.0" style="-fx-border-color: #EFCB05;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutY="231.0" mnemonicParsing="false" onAction="#users" opacity="0.45" prefHeight="74.0" prefWidth="428.0" style="-fx-border-color: #EFCB05;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+      <ImageView fitHeight="797.0" fitWidth="860.0" layoutX="428.0" layoutY="-47.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/Welcome.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_logouta" layoutX="1189.0" layoutY="23.0" mnemonicParsing="false" onAction="#logout" text="LogOut" />
+   </children>
+</AnchorPane>

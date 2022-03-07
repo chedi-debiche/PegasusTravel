@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="273.0" prefWidth="516.0" style="-fx-background-color: #FFCC80; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MaisonSghiraController">
+   <children>
+      <Label fx:id="proName" layoutX="42.0" layoutY="26.0" prefHeight="27.0" prefWidth="517.0" text="nomMaison">
+         <font>
+            <Font name="Eras Demi ITC" size="22.0" />
+         </font></Label>
+      <Label fx:id="prodPrice" layoutX="441.0" layoutY="23.0" prefHeight="33.0" prefWidth="111.0" text="price " textFill="#0e13ed">
+         <font>
+            <Font name="Bodoni MT" size="26.0" />
+         </font></Label>
+      <ImageView fx:id="prodImage" fitHeight="102.0" fitWidth="242.0" layoutX="158.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="prodDes" layoutX="82.0" layoutY="81.0" prefHeight="19.0" prefWidth="448.0" text="localisation" textFill="#00974b">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="35.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/map.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="prodID" layoutX="466.0" layoutY="217.0" prefHeight="43.0" prefWidth="78.0" text="NMaison" textFill="#8c0101">
+         <font>
+            <Font name="Gill Sans MT" size="19.0" />
+         </font>
+      </Label>
+      <Text fx:id="prodDescription" layoutX="68.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="description" wrappingWidth="440.6708984375">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="43.0" fitWidth="33.0" layoutX="391.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/tag.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
