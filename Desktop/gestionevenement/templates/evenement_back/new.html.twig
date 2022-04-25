@@ -1,0 +1,53 @@
+{% extends 'baseback.html.twig' %}
+
+{% block title %}New Evenement{% endblock %}
+
+{% block body %}
+    <div class="container-xxl flex-grow-1 container-p-y " >
+        <div style="display: flex;align-content: center ;justify-content: center ;margin-top: 100px;padding: 20px ">
+        <div class="col-md-6" >
+            <div class="card mb-4">
+                <h5 class="card-header">Ajouter Evenement</h5>
+                {{ form_start(form , {attr:{novalidate:'novalidate'}}) }}
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Nom</label>
+                        {{ form_widget(form.nomevent,{'attr':{'class':'form-control'}})}}
+                        {{ form_errors(form.nomevent,{'attr':{'class':'text-danger'}}) }}
+                    </div>
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Prix</label>
+                        {{ form_widget(form.prixevent,{'attr':{'class':'form-control'}})}}
+                        {{ form_errors(form.prixevent,{'attr':{'class':'text-danger'}}) }}
+                    </div>
+
+
+                    <div class="mb-3 row">
+                        <label for="html5-date-input" class="col-md-2 col-form-label">Date</label>
+                        <div class="col-md-10">
+                            {{ form_widget(form.date,{'attr':{'class':'form-control'}})}}
+                            {{ form_errors(form.date,{'attr':{'class':'text-danger'}}) }}
+                        </div>
+                    </div>
+
+
+                        </select>
+                    </div>
+                    <div class="row mb-3" style="margin-left: 250px">
+
+                        <div class="col-sm-10" style="align-content: center">
+                            <button type="submit" class="btn btn-primary">{{ button_label|default('Save') }}</button>
+                            <a type="submit" class="btn btn-primary"href="{{ path('app_evenement_back_index') }}"> retour </a>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+        {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

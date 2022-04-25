@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>PegasusTravel{% block title %} Index {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="front-office/http://webthemez.com" />
+    <!-- css -->
+    <link href="{{ asset('front-office/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('front-office/css/fancybox/jquery.fancybox.css') }}" rel="stylesheet">
+    <link href="{{ asset('front-office/css/flexslider.css') }}" rel="stylesheet" />
+    <link href="{{ asset('front-office/css/style.css') }}" rel="stylesheet" />
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="{{asset('front-office/http://html5shim.googlecode.com/svn/trunk/html5.js')}}"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+</div>
+<div id="wrapper" class="home-page">
+    <div class="topbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="pull-left hidden-xs"><i class="fa fa-clock-o"></i><span>Mon - Sat 8.00 - 18.00. Sunday CLOSED</span></p>
+                    <p class="pull-right"><i class="fa fa-phone"></i>Tel No. (+001) 123-456-789</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start header -->
+    <header>
+
+        <div class="col-sm-10">
+
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li ><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="front-office/#" data-toggle="dropdown" class="dropdown-toggle">About Us <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="about.html">Company</a></li>
+                                <li><a href="#">Our Team</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Investors</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="services.html">Voyages</a></li>
+                        <li><a href="portfolio.html">Maisons d'hotes</a></li>
+                        <li class="active"><a href="{{ path('app_evenement_index')}}"> Evenements </a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <img src="{{ asset('front-office/img/logo3.png')  }} " style=" text-align: left " >
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+    <section id="banner">
+        <!-- Slider -->
+        <div id="main-slider" class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src=/"img/slides/1.jpg" alt="" />
+                    <div class="flex-caption">
+                        <!--  <h3>Adventure Travel</h3>
+                          <p>Since we love a great adventure</p>-->
+
+                    </div>
+                </li>
+                <li>
+                    <img src="/img/slides/2.jpg" alt="" />
+                    <div class="flex-caption">
+                        <!--  <h3>Enjoy the Journey</h3>
+                          <p>Stop worrying and enjoy the trip</p> -->
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- end slider -->
+
+    </section>
+    <section id="call-to-action-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-sm-9">
+                    <!-- <h3>Travel makes one modest!!</h3> -->
+                    <!--  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus temporibus perferendis nesciunt quam repellendus nulla nemo ipsum odit corrupti</p> -->
+                </div>
+                <div class="col-md-2 col-sm-3">
+                    <!--   <a href="front-office/#" class="btn btn-primary">Read More</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="content">
+        <form style="margin-left: 30px" action="{{ path("filter") }}" method="get">
+            <label>  <input value="" id="search" name="prix"  class="form-control " placeholder="Votre Budget maximale ... " style="width: 300px"> </label>
+            <button class="btn btn-primary"  style="height: auto"> OK </button>
+        </form>
+        <section id="content" >
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success " style="align-content: center">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% block body %}
+        <div class="col-md-12">
+            <div class="aligncenter"><h2 class="aligncenter">Les évenements </h2></div>
+            <br/>
+        </div>
+
+        <div style=" display: flex;align-content: center ; justify-content: center ; margin-top: 100px ; padding: 20px">
+            <div class="row box-section">
+                <div class="col-md-5">
+                    <div class="container">
+                        <div class="row" >
+                            {% for e in evenement %}
+                            <a href="{{ path('app_reservationevenement_new', {'idevent': e.idevent}) }}">
+                                <div class="col-md-4" >
+                                    <div class="box-content" style="margin:20px">
+                                        <h3>{{ e.nomevent }} <span class="price pull-right">{{ e.prixevent }}$</span></h3>
+                                            <strong>{{ e.date ? e.date|date('Y-m-d') : '' }}</strong>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <tr>
+                                    <td colspan="5">no records found</td>
+                                </tr>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+
+
+                {% endblock %}
+            </div>
+        </div>
+</div>
+</div>
+<div class="text-center">
+    <a type="submit" class="btn btn-primary btn-s" style="margin:100px ; margin-top: 20px"href="{{ path('tri') }}"> <strong>trier par date plus ancien</strong </a>
+    <a type="submit" class="btn btn-primary btn-sm " style="margin:100px ; margin-top: 20px"  href="{{ path('impr' )}}">  <strong>enregistrer sous forme pdf</strong></a>
+</div>
+<div style=" margin-left: 40px ; margin-bottom: 40px">
+{{ knp_pagination_render( evenement) }}
+</div>
+</body>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Informations utiles</h5>
+                    <ul class="link-list">
+                        <li><a href="#">Qui sommes-nous?</a></li>
+                        <li><a href="#">Conditions de vente</a></li>
+                        <li><a href="#">PegasusTravel vous répond</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Points de ventes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Our Contact</h5>
+                    <address>
+                        Adresse: Angle rue des Entrepreneurs et rue du Métal Immeuble AMIRA,
+                        6ème étage LAC II - 2035 TUNIS.</address>
+                    <p>
+                        <i class="icon-phone"></i>Tél:+(216) 70 103 103 <br>
+                        Fax:+(216) 71 942 682
+                        <i class="icon-envelope-alt"></i> PegasusTravel@gmail.com
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="sub-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="copyright">
+                        <p>
+                            <!--  <span>&copy; Bootstrap Template 2018 All right reserved. Template By </span><a href="http://webthemez.com/free-bootstrap-templates/" target="_blank">WebThemez</a> -->
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="social-network">
+                        <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+<!-- javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ asset('front-office/js/jquery.js') }}"></script>
+<script src="{{ asset('front-office/js/jquery.easing.1.3.js') }}"></script>
+<script src="{{ asset('front-office/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('front-office/js/jquery.fancybox.pack.js') }}"></script>
+<script src="{{ asset('front-office/js/jquery.fancybox-media.js') }}"></script>
+<script src="{{ asset('front-office/js/jquery.flexslider.js') }}"></script>
+<script src="{{ asset('front-office/js/animate.js') }}"></script>
+<!-- Vendor Scripts -->
+<script src="{{ asset('front-office/js/modernizr.custom.js') }}"></script>
+<script src="{{ asset('front-office/js/jquery.isotope.min.js') }}"></script>
+<script src="{{ asset('front-office/js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('front-office/js/animate.js') }}"></script>
+<script src="{{ asset('front-office/js/custom.js') }}"></script>
+</body>
+</html>
+</html>

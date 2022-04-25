@@ -1,0 +1,122 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Evenement {% endblock %}
+
+{% block body %}
+    <input type="text" id="show" placeholder="recherche par Nom                               🔍" style="margin-left: 20px ; margin-top: 20px; width:300px" >
+
+    <h1 style="text-align: center;margin-top: 20px;margin-bottom: 20px">Upcoming Events </h1>
+    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+        <div class="content-wrapper">
+            <div class="navbar-nav align-items-center">
+
+            </div>
+        </div>
+    </div>
+      <table  class="table" border="1px solid black">
+        <thead>
+        <tr>
+
+            <th style="text-align: center" >Nom de l'evenement </th>
+            <th style="text-align: center" >Prix de l'evenement</th>
+            <th style="text-align: center" >Date</th>
+        </tr>
+        <tbody>
+        {% for e in coming %}
+            <tr>
+                <td style="text-align: center">{{ e.nomevent }}</td>
+                <td style="text-align: center" >{{ e.prixevent }}</td>
+                <td style="text-align: center" >{{ e.date ? e.date|date('Y-m-d') : '' }}</td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h1 style="text-align: center;margin-top: 20px;margin-bottom: 20px">Evenement </h1>
+    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+        <div class="content-wrapper">
+            <div class="navbar-nav align-items-center">
+
+            </div>
+        </div>
+    </div>
+    <table id="t" class="table" border="1px solid black">
+        <thead>
+             <tr>
+
+                <th style="text-align: center" >Nom de l'evenement </th>
+                <th style="text-align: center" >Prix de l'evenement</th>
+                <th style="text-align: center" >Date</th>
+                <th style="text-align: center" >actions</th>
+             </tr>
+        <tbody>
+        <tbody id="all">
+        {% for e in evenements %}
+            <tr>
+                <td style="text-align: center">{{ e.nomevent }}</td>
+                <td style="text-align: center" >{{ e.prixevent }}</td>
+                <td style="text-align: center" >{{ e.date ? e.date|date('Y-m-d') : '' }}</td>
+                <td style="text-align: center" >
+                    <a type="submit" class="btn btn-primary" href="{{ path('app_evenement_back_show', {'idevent': e.idevent}) }}"> afficher </a>
+                    <a type="submit" class="btn btn-primary" href="{{ path('app_evenement_back_edit', {'idevent': e.idevent}) }}"> modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tbody id="search">
+        </tbody>
+    </table>
+<div class="text-center">
+    <a type="submit" class="btn btn-primary"href="{{ path('app_evenement_back_new') }}">Ajouter</a>
+
+    </div>
+
+<script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+<script>
+    $( document ).ready(function() {
+        $("#show").keyup(function(e) {
+            var value = $(this).val();
+            $.ajax({
+                url : "{{ path('search_back1') }}",
+                method: "GET",
+                data: {
+                    searchValue: value,
+                },
+                success : function(data){
+                    $('#t tbody#search').empty();
+                    if(data){
+                        $('#t tbody#all').hide();
+                        for (i = 0; i < data.length; i++) {
+
+                            $('#t tbody#search').append('' +
+                                '<tr><td> '+data[i].nomevent+' </td>' +
+                                '<td> '+data[i].prixevent+' </td>' +
+                                '<td>'+data[i].date +' </td>  ');
+                        };
+                    }
+                    else
+                    {
+                        $('#t tbody#all').show();
+                        $('#t tbody#search').empty();
+                        $('#t tbody#search').fadeIn('fast');
+                    }
+                },
+            });
+            return false;
+        });
+    });
+
+</script>
+
+
+{% endblock %}

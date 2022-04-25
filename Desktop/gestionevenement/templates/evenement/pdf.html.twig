@@ -1,0 +1,95 @@
+{% block body %}
+
+    <h1 align="center" style="color:black;">Pegasus Travels </h1>
+    <img src="{{ ('front-office/img/aaa.png') }} "></a>
+    <hr>
+    <div class="content" >
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-1">
+                    <div class="card-deck">
+                        <div class="card-header card-header-primary">
+                        </div>
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <style>
+                                #customers {
+                                    font-family: Arial, Helvetica, sans-serif;
+                                    border-collapse: collapse;
+                                    width: 100%;
+                                }
+
+                                #customers td, #customers th {
+                                    border: 1px solid #ddd;
+                                    padding: 8px;
+                                }
+
+                                #customers tr:nth-child(even) {
+                                    background-color: #f2f2f2;
+                                }
+
+                                #customers tr:hover {
+                                    background-color: #ddd;
+                                }
+
+                                #customers th {
+                                    padding-top: 12px;
+                                    padding-bottom: 12px;
+                                    text-align: left;
+                                    background-color: royalblue;
+                                    color: white;
+                                }
+                            </style>
+                        </head>
+                        </html>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table class="" id="customers" border="2px" style="text-align: center">
+        <thead>
+        <tr >
+            <th colspan="3" style="background-color:#66CDAA ; text-align: center ">La liste de nos évenments</th>
+        </tr>
+        <tr >
+            <th style="text-align: center":> nom de l'évenement :</th>
+            <th style="text-align: center"> prix de l'évenement :</th>
+            <th style="text-align: center">date de l'évenement :</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for e in evenement%}
+            <tr>
+
+                <td >{{ e.nomevent }}</td>
+                <td>{{ e.prixevent }}</td>
+                <td  >{{ e.date ? e.date|date('Y-m-d') : '' }}</td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    </div>
+    </div>
+    </div>
+    <footer class="py-4 bg-light mt-auto" style="margin-left: 60% ; margin-top: 400px">
+        <div class="container-fluid px-4">
+            <div class="d-flex align-items-center justify-content-between small">
+                <div class="text-muted">Copyright &copy; Pegasus Travels 2021</div>
+                <div>
+                    <a href="#">Privacy Policy</a>
+                    &middot;
+                    <a href="#">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Evenement{% endblock %}
+
+{% block body %}
+    <h1>Evenement</h1>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success" style="text-align: center">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <table class="center-block">
+        <tbody>
+            <tr>
+                <th style="text-align: center">Idevent</th>
+                <td>{{ evenement.idevent }}</td>
+            </tr>
+            <tr>
+                <th style="text-align: center" > Nomevent</th>
+                <td>{{ evenement.nomevent }}</td>
+            </tr>
+            <tr>
+                <th style="text-align: center">Prixevent</th>
+                <td>{{ evenement.prixevent }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ evenement.date ? evenement.date|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_evenement_index') }}">back to list</a>
+
+    <a href="{{ path('app_evenement_edit', {'idevent': evenement.idevent}) }}">edit</a>
+
+    {{ include('evenement/_delete_form.html.twig') }}
+{% endblock %}

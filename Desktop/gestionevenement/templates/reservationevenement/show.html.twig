@@ -1,0 +1,40 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block title %}Reservation evenement{% endblock %}
+
+{% block body %}
+    <div class="container-xxl flex-grow-1 container-p-y">
+
+    <div style=" display: flex;align-content: center ; justify-content: center ; margin-top: 50px ; padding: 20px">
+    <div class="col-md-6">
+    <div class="card mb-4">
+    <h1  >Reservation evenement</h1>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idre</th>
+                <td>{{ reservationevenement.idre }}</td>
+            </tr>
+            <tr>
+                <th>Nomre</th>
+                <td>{{ reservationevenement.nomre }}</td>
+            </tr>
+            <tr>
+                <th>Datere</th>
+                <td>{{ reservationevenement.datere ? reservationevenement.datere|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+        </select>
+    </div>
+        <div class="row mb-3" style="margin-left: 250px">
+
+            <div class="col-sm-10">
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+{% endblock %}

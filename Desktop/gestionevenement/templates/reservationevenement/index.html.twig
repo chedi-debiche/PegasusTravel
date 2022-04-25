@@ -1,0 +1,40 @@
+{% extends 'baseBack.html.twig' %}
+{% block title %}Reservation evenement {% endblock %}
+
+{% block body %}
+
+    <h1 style="text-align: center">Reservation evenement </h1>
+
+    <table  class="table" border="1px solid black  " style=" text-align: center" >
+        <thead>
+            <tr>
+
+                <th style="text-align: center":>Nom de la réservation </th>
+                <th style="text-align: center">Date de la réservation </th>
+                <th style="text-align: center">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reservationevenement in reservationevenements %}
+            <tr>
+
+                <td style="text-align: center">{{ reservationevenement.nomre }}</td>
+                <td style="text-align: center" >{{ reservationevenement.datere ? reservationevenement.datere|date('Y-m-d') : '' }}</td>
+                <td style="text-align: center" >
+                    <a type="submit" class="btn btn-primary"  href="{{ path('app_reservationevenement_show', {'idre': reservationevenement.idre}) }}"> afficher </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
