@@ -54,5 +54,31 @@ class EvenementRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+    public function DescEvenementSearch($order){
+        $em = $this->getEntityManager();
+
+        $query = $em->createQuery('SELECT e FROM App\Entity\Evenement e order by e.date DESC ');
+        return $query->getResult();
+    }
+
+    public function AscEvenementSearch($order){
+        $em = $this->getEntityManager();
+
+        $query = $em->createQuery('SELECT e FROM App\Entity\Evenement e order by e.date ASC  ');
+        return $query->getResult();
+    }
+    public function AutoDelete(){
+        $time = new \DateTime() ;
+        $time->format('H:i:s \O\n Y-m-d');
+        $time1=new \DateTime();
+        $time1->sub( date_interval_create_from_date_string('60 days'));
+        $time1->format('H:i:s \O\n Y-m-d');
+        $em = $this->getEntityManager();
+        $query = $em->createQuery('select m from App\Entity\Evenement m where m.date between ?1 and ?2')
+            ->setParameter('1',$time)
+            ->setParameter('2',$time1);
+        return $query->getResult();
+
+    }
 
 }

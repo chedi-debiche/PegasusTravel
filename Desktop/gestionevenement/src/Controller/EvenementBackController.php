@@ -31,7 +31,6 @@ class EvenementBackController extends AbstractController
             'coming'    => $upcoming ,
         ]);
     }
-
     /**
      * @Route("/new", name="app_evenement_back_new", methods={"GET", "POST"})
      */
@@ -87,8 +86,9 @@ class EvenementBackController extends AbstractController
     /**
      * @Route("/{idevent}", name="app_evenement_back_delete", methods={"POST"})
      */
-    public function delete(Request $request, Evenement $evenement, EntityManagerInterface $entityManager): Response
+    public function delete(Request $request, EvenementRepository $repo ,Evenement $evenement, EntityManagerInterface $entityManager): Response
     {
+
         if ($this->isCsrfTokenValid('delete'.$evenement->getIdevent(), $request->request->get('_token'))) {
             $entityManager->remove($evenement);
             $entityManager->flush();
@@ -121,5 +121,48 @@ class EvenementBackController extends AbstractController
         }
         return new JsonResponse($responseArray);
     }
+    /**
+     * @Route("DOWNtriEQUIPE", name="DOWNtriEQUIPE",options={"expose"=true})
+     */
+    public function DOWNtriEQUIPE(Request $request,EvenementRepository $repository): JsonResponse
+    {
 
+        $UPorDOWN=$request->get('order');
+        $Reclamations=$repository->DescEvenementSearch($UPorDOWN);
+        $responseArray = [];
+        $idx = 0;
+        foreach ($Reclamations as $Evenement){
+            $temp =  [
+                'nomevent' => $Evenement->getNomevent(),
+                'prixevent' => $Evenement->getPrixevent(),
+                'date' => $Evenement->getDate()->format(' Y-m-d'),
+            ];
+
+            $responseArray[$idx++] = $temp;
+
+        }
+        return new JsonResponse($responseArray);
+    }
+
+    /**
+     * @Route("UPtriEQUIPE", name="UPtriEQUIPE",options={"expose"=true})
+     */
+    public function UPtriEQUIPE(Request $request,EvenementRepository $repository): JsonResponse
+    {
+
+
+        $UPorDOWN=$request->get('order');
+        $Reclamations=$repository->AscEvenementSearch($UPorDOWN);
+        $responseArray = [];
+        $idx = 0;
+        foreach ($Reclamations as $Evenement){
+            $temp = [
+                'nomevent' => $Evenement->getNomevent(),
+                'prixevent' => $Evenement->getPrixevent(),
+                'date' => $Evenement->getDate()->format(' Y-m-d'),
+            ];
+            $responseArray[$idx++] = $temp;
+        }
+        return new JsonResponse($responseArray);
+    }
 }

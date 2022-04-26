@@ -4,7 +4,8 @@
 
 {% block body %}
     <input type="text" id="show" placeholder="recherche par Nom                               🔍" style="margin-left: 20px ; margin-top: 20px; width:300px" >
-
+    <a style="margin-left: 150px" class="tg-btn" href="" id="idup">Trier par date ⬆️</a>
+    <a class="tg-btn" href="" id="iddown" style="margin-left: 20px ; margin-top: 20px">Trier par date ⬇️</a>
     <h1 style="text-align: center;margin-top: 20px;margin-bottom: 20px">Upcoming Events </h1>
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <div class="content-wrapper">
@@ -115,7 +116,58 @@
             return false;
         });
     });
+    $("#idup").click(function(e) {
+        var value3 ="ASC";
+        $.ajax({
+            url :  "{{ path('UPtriEQUIPE') }}",
+            type : 'GET',
+            data: {
 
+                'order': value3
+            },
+            success : function(data){
+                $('#t tbody#search').empty();
+
+                for (i = 0; i < data.length; i++) {
+
+                    $('#t tbody#all').hide();
+                    $('#t tbody#search').append('' +
+                        '<tr><td> '+data[i].nomevent+' </td>' +
+                        '<td> '+data[i].prixevent+' </td>' +
+                        '<td>'+data[i].date +' </td>  '
+                    );
+
+                }
+            },
+
+
+
+        });
+        return false;});
+    $("#iddown").click(function(e) {
+        var value3 ="DESC";
+        $.ajax({
+            url :  "{{ path('DOWNtriEQUIPE') }}",
+            type : 'GET',
+            data: {
+
+                'order': value3
+            },
+            success : function(data){
+                $('#t tbody#search').empty();
+
+                for (i = 0; i < data.length; i++) {
+
+                    $('#t tbody#all').hide();
+                    $('#t tbody#search').append('' +
+                        '<tr><td> '+data[i].nomevent+' </td>' +
+                        '<td> '+data[i].prixevent+' </td>' +
+                        '<td>'+data[i].date +' </td>  ');
+                }
+            },
+
+        });
+        return false;});
 </script>
 
 

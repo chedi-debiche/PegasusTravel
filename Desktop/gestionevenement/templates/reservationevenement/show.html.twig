@@ -28,6 +28,8 @@
         </select>
     </div>
         <div class="row mb-3" style="margin-left: 250px">
+            <a type="submit" class="btn btn-primary" href="{{ path('app_reservationevenement_edit', {'idre': reservationevenement.idre}) }}"> Modifer </a>
+            {{ include('reservationevenement/_delete_form.html.twig') }}
 
             <div class="col-sm-10">
 

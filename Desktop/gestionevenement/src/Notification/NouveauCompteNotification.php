@@ -36,7 +36,7 @@ class NouveauCompteNotification
         // On construit le mail
         $message = (new TemplatedEmail())
             // Expéditeur
-            ->from('noreplysahti@gmail.comr')
+            ->from('pegasustravels10@gmail.com')
             // Destinataire
             ->to('rahma.tiss@esprit.tn')
             // Corps du message (créé avec twig)

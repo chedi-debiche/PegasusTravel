@@ -57,7 +57,8 @@ class ReservationevenementController extends AbstractController
             $entityManager->flush();
             $this->notify_creation->notify();
             $this->addFlash("success","votre réservation a été ajoutée avec succées");
-            return $this->redirectToRoute('app_evenement_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_reservationevenement_show' , [
+                'idre' => $reservationevenement->getIdre()], Response::HTTP_SEE_OTHER);
         }
         return $this->render('reservationevenement/new.html.twig', [
             'reservationevenement' => $reservationevenement,
@@ -104,6 +105,6 @@ class ReservationevenementController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_reservationevenement_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_evenement_index', [], Response::HTTP_SEE_OTHER);
     }
 }
